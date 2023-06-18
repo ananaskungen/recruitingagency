@@ -1,4 +1,4 @@
 <x-admin-layout>
 
-    <h1>Recruitig Page</h1>
+    <h1>Employer Applications</h1>
 </x-admin-layout>

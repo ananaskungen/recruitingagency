@@ -33,28 +33,54 @@
             </div>
         {{-- Nav Link --}}
             <nav class="mt-4">
-                    <x-side-nav-link href="{{ route('recruiting')}}" :active="request()->routeIs('recruiting')">
-                        Recruiting
-                    </x-side-nav-link>
 
-                    <x-side-nav-link href="{{ route('approved-applicants')}}" :active="request()->routeIs('approved-applicants')">
-                        Approved Applicants
-                    </x-side-nav-link>
+                <div class="relative">
 
-                    <x-side-nav-link href="{{ route('reports')}}" :active="request()->routeIs('reports')">
-                       Reports
-                    </x-side-nav-link>
-
-
-                    <x-side-nav-link href="{{ route('users')}}" :active="request()->routeIs('users')">
-                        Users
-                     </x-side-nav-link>
-
-                     <x-side-nav-link href="{{ route('settings')}}" :active="request()->routeIs('settings')">
-                        Settings
-                     </x-side-nav-link>
-
+                    <ul class="block w-11/12 my-4 mx-auto" x-data="{ selected: null }">
+                        <li class="flex bg-gray-400 flex-col">
+                            <h4 @click="selected !== 0 ? selected = 0 : selected = null" class="cursor-pointer px-5 py-3 bg-gray-700 text-center" @click.stop="">
+                                Recruiting
+                            </h4>
+                            <div x-show="selected === 0 || '{{ request()->routeIs('job-seeker-applications') }} || '{{ request()->routeIs('case-manager-applications') }}' || '{{ request()->routeIs('employer-applications') }}'">
+                                <x-side-nav-link href="{{ route('job-seeker-applications') }}" :active="request()->routeIs('job-seeker-applications')" @click="selected = 0">
+                                    Job Seekers
+                                </x-side-nav-link>
+                                <x-side-nav-link href="{{ route('case-manager-applications') }}" :active="request()->routeIs('case-manager-applications')" @click="selected = 0">
+                                    Case Managers
+                                </x-side-nav-link>
+                                <x-side-nav-link href="{{ route('employer-applications') }}" :active="request()->routeIs('employer-applications')" @click="selected = 0">
+                                    Employer
+                                </x-side-nav-link>
+                            </div>
+                        </li>
+                        
+                        <li class="flex bg-gray-500 mt-3 flex-col">
+                            <h4 @click="selected !== 1 ? selected = 1 : selected = null" class="cursor-pointer px-5 py-3 bg-gray-700 text-center" @click.stop="">
+                                Approved Applicants
+                            </h4>
+                            <div x-show="selected === 1 || '{{ request()->routeIs('approved-job-seeker') }}'">
+                                <x-side-nav-link  href="{{ route('approved-job-seeker') }}" :active="request()->routeIs('approved-job-seeker')" @click="selected = 1">
+                                    Job Seekers
+                                </x-side-nav-link>
+                                <x-side-nav-link href="{{ route('approved-case-manager') }}" :active="request()->routeIs('approved-case-manager')" @click="selected = 1">
+                                    Case Managers
+                                </x-side-nav-link>
+                                <x-side-nav-link href="{{ route('approved-employer') }}" :active="request()->routeIs('approved-employer')" @click="selected = 1">
+                                    Employer
+                                </x-side-nav-link>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    
+                    
+                    
+                    
+                    
+                </div>
             </nav>
+                            
+     
         </aside>
 
         <main class="flex-1 bg-gray-100 h-screen">

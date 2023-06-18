@@ -99,15 +99,39 @@ Route::middleware('auth')->group(function () {
 
 /* Super Admin Panel Related */
 Route::middleware(['auth','verified'])->group(function () {
-    Route::get('/dashboard/recruiting', function () {
+    /* Approved Application */
+    Route::get('/dashboard/approved-job-seeker-applications', function () {
         // Logic for agency registration
-        return view('super-admin-related/recruiting');
-    })->name('recruiting');
+        return view('super-admin-related/approved_job_seeker');
+    })->name('approved-job-seeker');
 
-    Route::get('/dashboard/approved-applicants', function () {
+    Route::get('/dashboard/approved-case-manager-applications', function () {
         // Logic for agency registration
-        return view('super-admin-related/approved_applicants');
-    })->name('approved-applicants');
+        return view('super-admin-related/approved_case_manager');
+    })->name('approved-case-manager');
+
+    Route::get('/dashboard/approved-employer-applicants', function () {
+        // Logic for agency registration
+        return view('super-admin-related/approved_employer');
+    })->name('approved-employer');
+
+    /* Recruiting Section */
+    Route::get('/dashboard/job-seeker-applications', function () {
+        // Logic for agency registration
+        return view('super-admin-related/job_seeker_applications');
+    })->name('job-seeker-applications');
+
+    Route::get('/dashboard/case-manager-applications', function () {
+        // Logic for agency registration
+        return view('super-admin-related/case_manager_applications');
+    })->name('case-manager-applications');
+
+    Route::get('/dashboard/employer-applicants', function () {
+        // Logic for agency registration
+        return view('super-admin-related/employer_applications');
+    })->name('employer-applications');
+    
+
     
     Route::get('/dashboard/reports', function () {
         // Logic for agency registration
