@@ -36,41 +36,79 @@
 
                 <div class="relative">
 
-                    <ul class="block w-11/12 my-4 mx-auto" x-data="{ selected: null }">
-                        <li class="flex bg-gray-400 flex-col">
-                            <h4 @click="selected !== 0 ? selected = 0 : selected = null" class="cursor-pointer px-5 py-3 bg-gray-700 text-center" @click.stop="">
-                                Recruiting
+                    <ul class="block w-11/12 my-4 mx-auto" x-data="{ selectedMenu: null }">
+                        <li class="flex bg-gray-500 flex-col">
+                            <h4 @click="selectedMenu !== 0 ? selectedMenu = 0 : selectedMenu = null" class="cursor-pointer px-5 py-3 bg-gray-700 text-center">
+                                New Applications
                             </h4>
-                            <div x-show="selected === 0 || '{{ request()->routeIs('job-seeker-applications') }} || '{{ request()->routeIs('case-manager-applications') }}' || '{{ request()->routeIs('employer-applications') }}'">
-                                <x-side-nav-link href="{{ route('job-seeker-applications') }}" :active="request()->routeIs('job-seeker-applications')" @click="selected = 0">
+                            <div x-show="selectedMenu === 0">
+                                <x-side-nav-link href="{{ route('job-seeker-applications') }}" :active="request()->routeIs('job-seeker-applications')">
                                     Job Seekers
                                 </x-side-nav-link>
-                                <x-side-nav-link href="{{ route('case-manager-applications') }}" :active="request()->routeIs('case-manager-applications')" @click="selected = 0">
+                                <x-side-nav-link href="{{ route('case-manager-applications') }}" :active="request()->routeIs('case-manager-applications')">
                                     Case Managers
                                 </x-side-nav-link>
-                                <x-side-nav-link href="{{ route('employer-applications') }}" :active="request()->routeIs('employer-applications')" @click="selected = 0">
-                                    Employer
+                                <x-side-nav-link href="{{ route('employer-applications') }}" :active="request()->routeIs('employer-applications')">
+                                    Employers
                                 </x-side-nav-link>
                             </div>
                         </li>
-                        
+                    
                         <li class="flex bg-gray-500 mt-3 flex-col">
-                            <h4 @click="selected !== 1 ? selected = 1 : selected = null" class="cursor-pointer px-5 py-3 bg-gray-700 text-center" @click.stop="">
+                            <h4 @click="selectedMenu !== 1 ? selectedMenu = 1 : selectedMenu = null" class="cursor-pointer px-5 py-3 bg-gray-700 text-center">
                                 Approved Applicants
                             </h4>
-                            <div x-show="selected === 1 || '{{ request()->routeIs('approved-job-seeker') }}'">
-                                <x-side-nav-link  href="{{ route('approved-job-seeker') }}" :active="request()->routeIs('approved-job-seeker')" @click="selected = 1">
+                            <div x-show="selectedMenu === 1">
+                                <x-side-nav-link href="{{ route('approved-job-seeker') }}" :active="request()->routeIs('approved-job-seeker')">
                                     Job Seekers
                                 </x-side-nav-link>
-                                <x-side-nav-link href="{{ route('approved-case-manager') }}" :active="request()->routeIs('approved-case-manager')" @click="selected = 1">
+                                <x-side-nav-link href="{{ route('approved-case-manager') }}" :active="request()->routeIs('approved-case-manager')">
                                     Case Managers
                                 </x-side-nav-link>
-                                <x-side-nav-link href="{{ route('approved-employer') }}" :active="request()->routeIs('approved-employer')" @click="selected = 1">
-                                    Employer
+                                <x-side-nav-link href="{{ route('approved-employer') }}" :active="request()->routeIs('approved-employer')">
+                                    Employers
+                                </x-side-nav-link>
+                            </div>
+                        </li>
+
+                        <li class="flex bg-gray-500 mt-3 flex-col">
+                            <h4 @click="selectedMenu !== 2 ? selectedMenu = 2 : selectedMenu = null" class="cursor-pointer px-5 py-3 bg-gray-700 text-center">
+                                Reports
+                            </h4>
+                            <div x-show="selectedMenu === 2">
+                                <x-side-nav-link href="{{ route('reports') }}" :active="request()->routeIs('reports')">
+                                    All Reports
+                                </x-side-nav-link>
+                            </div>
+                        </li>
+
+                        <li class="flex bg-gray-500 mt-3 flex-col">
+                            <h4 @click="selectedMenu !== 3 ? selectedMenu = 3 : selectedMenu = null" class="cursor-pointer px-5 py-3 bg-gray-700 text-center">
+                                Users
+                            </h4>
+                            <div x-show="selectedMenu === 3">
+                                <x-side-nav-link href="{{ route('users') }}" :active="request()->routeIs('users')">
+                                    All Users
+                                </x-side-nav-link>
+                            </div>
+                        </li>
+
+                        <li class="flex bg-gray-500 mt-3 flex-col">
+                            <h4 @click="selectedMenu !== 4 ? selectedMenu = 4 : selectedMenu = null" class="cursor-pointer px-5 py-3 bg-gray-700 text-center">
+                                Settings
+                            </h4>
+                            <div x-show="selectedMenu === 4">
+                                <x-side-nav-link href="{{ route('settings') }}" :active="request()->routeIs('settings')">
+                                    Settings
                                 </x-side-nav-link>
                             </div>
                         </li>
                     </ul>
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
