@@ -1,43 +1,211 @@
 <x-visitor-layout>
+   
+  <div class="flex justify-center mt-10">
+    <h1 class="bold text-xl"> APPLICATION FORM CASE MANAGERt </h1>
+  </div>
+  
+      <div class=" mx-auto max-w-6xl py-20 px-12 lg:px-24  mb-24">
+        <form>
+          <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
+            <div class="-mx-3 md:flex flex-col mb-6">
+              <div class="flex">
 
-    <form>
-        <input placeholder="First Name">
-        <input placeholder="Last Name">
-        <input placeholder="Email">
-        <input placeholder="Tel">
-        <input placeholder="LinkedIn Profile (Optional)">
-        <input placeholder="Website (Optional)">
-        <input placeholder="Github Profile (Optional)">
-        <input placeholder="Fields you wish to work in?">
-        <input placeholder="Are you currently working?">
-        <input placeholder="Gender">
-        <input placeholder="Location">
-        <input placeholder="Remote">
-        <input placeholder="Additional Information">
-        <input type="Submit">
-    </form>
+                <div class="md:w-1/2 px-3 mb-6 md:mb-0">
+                  <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="company">
+                    First Name
+                  </label>
+                  <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="company" type="text" placeholder="First Name">
+                  
+                </div>
+                <div class="md:w-1/2 px-3">
+                  <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="title">
+                    Last Name
+                  </label>
+                  <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="title" type="text" placeholder="Last Name">
+                </div>
+              </div>
+                
+              <div class="flex">
 
-<div class="bg-blue-200 min-h-screen flex items-center">
-    <div class="w-full">
-      <h2 class="text-center text-blue-400 font-bold text-2xl uppercase mb-10">Case Manager Application</h2>
-      <div class="bg-white p-10 rounded-lg shadow md:w-3/4 mx-auto lg:w-1/2">
-        <form action="">
+                <div class="md:w-1/2 px-3 mb-6 md:mb-0">
+                  <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="company">
+                    Email
+                  </label>
+                  <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="company" type="text" placeholder="Email">
+                  
+                </div>
+                <div class="md:w-1/2 px-3">
+                  <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="title">
+                  Tel
+                  </label>
+                  <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="title" type="text" placeholder="Tel">
+                </div>
+
+              
+            </div>
+
+            <div class="flex">
+
+              <div class="md:w-1/2 px-3 mb-6 md:mb-0">
+                <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="company">
+                  Gender
+                </label>
+                <div>
+                  <select class="w-full bg-gray-200 border border-gray-200 text-black text-xs py-3 px-4 pr-8 mb-3 rounded" id="location">
+                    <option></option>
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>None of the above</option>
+                  </select>
+                </div>
+
+              </div>
+              <div class="md:w-1/2 px-3">
+                <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="title">
+                Location
+                </label>
+                <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="title" type="text" placeholder="Stockholm, Sweden">
+              </div>
+          
+          </div>
+
+
+          <div class="flex">
+
+            <div class="md:w-1/2 px-3 mb-6 md:mb-0">
+              <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="company">
+                Do you wish to work remotely?
+              </label>
+              <div>
+                <select class="w-full bg-gray-200 border border-gray-200 text-black text-xs py-3 px-4 pr-8 mb-3 rounded" id="location">
+                  <option></option>
+                  <option>Yes</option>
+                  <option>No</option>
+                </select>
+              </div>
+
+            </div>
+            <div class="md:w-1/2 px-3">
+              <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="title">
+              Are you currently working?
+              </label>
+              <select class="w-full bg-gray-200 border border-gray-200 text-black text-xs py-3 px-4 pr-8 mb-3 rounded" id="location">
+                <option></option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </div>
+        
+        </div>
+
+        <div class="flex">
+
+          <div class="md:w-1/2 px-3 mb-6 md:mb-0">
+            <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="company">
+              Do you have any past experience working as an interviewer?
+            </label>
+            <div>
+              <select class="w-full bg-gray-200 border border-gray-200 text-black text-xs py-3 px-4 pr-8 mb-3 rounded" id="job-type">
+                <option></option>
+                <option>Yes, +1 year's of experience</option>
+                <option>Yes, +2 year's of experience</option>
+                <option>Yes, +3 year's of experience</option>
+                <option>Yes, +5 year's of experience</option>
+                <option>Yes, +10 year's of experience</option>
+                <option>No</option>
+              </select>
+            </div>
+
+          </div>
+          
+      
+        </div>
+
+
+            <div class="-mx-3 md:flex mb-6">
+              <div class="md:w-full px-6">
+                <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="application-link">
+                  LinkedIn Profile (Optional)
+                </label>
+                <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="application-link" type="text" placeholder="">
+              </div>
+
+              <div class="md:w-full px-3">
+                <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="application-link">
+                  Website (Optional)
+                </label>
+                <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="application-link" type="text" placeholder="">
+              </div>
+
+              <div class="md:w-full px-6">
+                <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="application-link">
+                  Github profile (Optional)
+                </label>
+                <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="application-link" type="text" placeholder="">
+              </div>
+            </div>
+
+            <div class="-mx-3 md:flex mb-2">
+              <div class=" flex flex-col">
+                
+                <div class="px-6">
+                  <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="job-type">
+                    Job Type*
+                  </label>
+                  <div>
+                    <select class="w-full bg-gray-200 border border-gray-200 text-black text-xs py-3 px-4 pr-8 mb-3 rounded" id="job-type">
+                      <option></option>
+                      <option>Full-Time</option>
+                      <option>Part-Time</option>
+                      <option>Internship</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="px-6">
+                  <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="job-type">
+                    Attachments
+                  </label>
+                  <div>
+                    <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="application-link" type="file" multiple>
+                  </div>
+                </div>
+                
+                <div class=" px-6">
+                  <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="job-type">
+                    Introduction Video
+                  </label>
+                  <div>
+                    <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="application-link" type="file" multiple>
+                  </div>
+                </div>
+              </div>
+
+              <div class=" w-full">
+                <div class="px-3 mb-6 md:mb-0">
+                  <label class="uppercase h-full tracking-wide text-black text-xs font-bold mb-2" for="company">
+                    Additional Information (Optional)
+                  </label>
+                  <div>
+                    <textarea rows="10" class="w-full bg-gray-200 h-48 text-black border border-gray-200 rounded py-3 px-4 mb-3 block mt-0" >
+        
+                    </textarea>
+                  </div>
+                </div>
+                
             
-          <div class="mb-5">
-            <label for="name" class="block mb-2 font-bold text-gray-600">Name</label>
-            <input type="text" id="name" name="name" placeholder="Put in your fullname." class="border border-gray-300 shadow p-3 w-full rounded mb-">
+              </div>
+            </div>
+            <div class="-mx-3 md:flex mt-2">
+              <div class="md:w-full px-3">
+                <button class="md:w-full bg-gray-900 text-white font-bold py-2 px-4 border-b-4 hover:border-b-2 border-gray-500 hover:border-gray-100 rounded-full">
+                  Submit Application
+                </button>
+              </div>
+            </div>
           </div>
- 
-          <div class="mb-5">
-            <label for="twitter" class="block mb-2 font-bold text-gray-600">Twitter</label>
-            <input type="text" id="twitter" name="twitter" placeholder="Put in your fullname." class="border border-red-300 shadow p-3 w-full rounded mb-">
-            <p class="text-sm text-red-400 mt-2">Twitter username is required</p>
-          </div>
- 
-          <button class="block w-full bg-blue-500 text-white font-bold p-4 rounded-lg">Submit</button>
         </form>
       </div>
-    </div>
-  </div>
+    
 
 </x-visitor-layout>

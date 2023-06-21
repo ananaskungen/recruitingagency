@@ -52,6 +52,7 @@
                 </label>
                 <div>
                   <select class="w-full bg-gray-200 border border-gray-200 text-black text-xs py-3 px-4 pr-8 mb-3 rounded" id="location">
+                    <option></option>
                     <option>Male</option>
                     <option>Female</option>
                     <option>None of the above</option>
@@ -77,6 +78,7 @@
               </label>
               <div>
                 <select class="w-full bg-gray-200 border border-gray-200 text-black text-xs py-3 px-4 pr-8 mb-3 rounded" id="location">
+                  <option></option>
                   <option>Yes</option>
                   <option>No</option>
                 </select>
@@ -88,6 +90,7 @@
               Are you currently working?
               </label>
               <select class="w-full bg-gray-200 border border-gray-200 text-black text-xs py-3 px-4 pr-8 mb-3 rounded" id="location">
+                <option></option>
                 <option>Yes</option>
                 <option>No</option>
               </select>
@@ -144,6 +147,7 @@
                   </label>
                   <div>
                     <select class="w-full bg-gray-200 border border-gray-200 text-black text-xs py-3 px-4 pr-8 mb-3 rounded" id="job-type">
+                      <option></option>
                       <option>Full-Time</option>
                       <option>Part-Time</option>
                       <option>Internship</option>
