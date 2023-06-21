@@ -9,7 +9,7 @@ class JobSeeker extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['first_name', 'last_name', 'gender', 'email', 'phone_number', 'linkedin_profile', 'github_profile', 'location', 'remote', 'website', 'additional_info'];
+    protected $fillable = ['first_name', 'last_name', 'gender', 'email', 'phone_number', 'linkedin_profile', 'github_profile', 'location', 'remote', 'website', 'additional_info', 'video'];
 
     public function attachments()
     {

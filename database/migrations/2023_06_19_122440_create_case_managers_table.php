@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('linkedin_profile')->nullable();
             $table->string('github_profile')->nullable();
             $table->string('location');
+            $table->string('video')->nullable();
             $table->boolean('is_remote');
             $table->string('website');
             $table->text('additional_info')->nullable();

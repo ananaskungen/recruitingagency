@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('github_profile')->nullable();
             $table->string('location');
             $table->boolean('is_remote');
+            $table->string('video')->nullable();
             $table->string('website');
             $table->text('additional_info')->nullable();
             $table->timestamps();
