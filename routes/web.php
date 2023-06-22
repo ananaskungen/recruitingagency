@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\JobSeekerController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -63,10 +64,19 @@ Route::get('/register/employer', function () {
 })->name('employer');
 
 
+
 Route::get('/register/job_seeker/application-form-job-seeker', function () {
     // Logic for job seeker registration
     return view('application-forms/job_seeker_application');
 })->name('application-form-job-seeker');
+
+Route::post('/register/job_seeker/application-form-job-seeker/thank-you', [JobSeekerController::class, 'store'])->name('job_seeker-applicant.store');
+
+Route::get('/register/job_seeker/application-form-job-seeker/thank-you', function () {
+    // Logic for job seeker registration
+    return view('application-forms/thank-you');
+})->name('thank_you');
+
 
 Route::get('/register/case_manager/application-form-case-manager', function () {
     // Logic for case manager registration

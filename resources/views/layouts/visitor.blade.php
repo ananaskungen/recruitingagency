@@ -30,7 +30,7 @@
                 
                     <div x-data="{ isOpen: false }">
                         <div class="relative">
-                          <button @click="isOpen = !isOpen" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
+                          <button @click="isOpen = !isOpen" class="ml-4 mr-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
                             I am a
                             <svg :class="{'transform rotate-180': isOpen}" class="w-4 h-4 inline-block" fill="currentColor" viewBox="0 0 20 20">
                               <path fill-rule="evenodd" d="M6.707 9.293a1 1 0 0 1 1.414 0L10 11.586l1.879-1.879a1 1 0 1 1 1.414 1.414l-2.828 2.828a1 1 0 0 1-1.414 0L6.707 10.707a1 1 0 0 1 0-1.414z" clip-rule="evenodd"></path>
@@ -42,11 +42,11 @@
                             <a href="{{ route('employer') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">Employer</a>
                             <a href="{{ route('case_manager') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">Case Manager</a>
                           </div>
-                        </div>
-                    </div>
+                          <a href="{{ route('how-it-works') }}" class="font-semibold ml-4 mr-4  text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">How it works</a>
+                          <a href="{{ route('contact') }}" class="font-semibold ml-4 mr-4  text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Contact Us</a>
 
-                    <a href="{{ route('how-it-works') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">How it works</a>
-                    <a href="{{ route('contact') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Contact Us</a>
+                        </div>  
+                    </div>    
 
 
                     

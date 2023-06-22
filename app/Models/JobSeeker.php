@@ -2,14 +2,30 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Attachment;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class JobSeeker extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['first_name', 'last_name', 'gender', 'email', 'phone_number', 'linkedin_profile', 'github_profile', 'location', 'remote', 'website', 'additional_info', 'video'];
+    protected $fillable = [
+        'first_name',
+        'last_name',
+        'gender',
+        'email',
+        'phone_number',
+        'linkedin_profile',
+        'github_profile',
+        'location',
+        'is_remote',
+        'is_working',
+        'job_type',
+        'field',
+        'website',
+        'additional_info', 
+    ];
 
     public function attachments()
     {

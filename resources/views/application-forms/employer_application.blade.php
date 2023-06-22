@@ -1,7 +1,7 @@
 <x-visitor-layout>
    
   <div class="flex justify-center mt-10">
-    <h1 class="bold text-xl"> APPLICATION FORM CASE MANAGERt </h1>
+    <h1 class="bold text-xl"> APPLICATION FORM EMPLOYER </h1>
   </div>
   
       <div class=" mx-auto max-w-6xl py-20 px-12 lg:px-24  mb-24">
@@ -14,7 +14,16 @@
                   <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="company">
                     Full Name
                   </label>
-                  <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="company" type="text" placeholder="First Name">
+                  <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="company" type="text" placeholder="Full Name">
+                  
+                </div>
+
+
+                <div class="md:w-1/2 px-3 mb-6 md:mb-0">
+                  <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="company">
+                    Company
+                  </label>
+                  <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="company" type="text" placeholder="Company">
                   
                 </div>
             
@@ -46,34 +55,26 @@
                 </label>
                 <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="title" type="text" placeholder="Stockholm, Sweden">
               </div>
+
+              <div class="md:w-1/2 px-3 mb-6 md:mb-0">
+                <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="company">
+                 How many candidates are you looking to proceed with?
+                </label>
+                <div>
+                  <select class="w-full bg-gray-200 border border-gray-200 text-black text-xs py-3 px-4 pr-8 mb-3 rounded" id="job-type">
+                    <option></option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>+5</option>
+                  </select>
+                </div>
+    
+              </div>
+              
           
           </div>
-
-
-  
-
-        <div class="flex">
-
-          <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-            <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="company">
-             How many candidates are you looking to proceed with?
-            </label>
-            <div>
-              <select class="w-full bg-gray-200 border border-gray-200 text-black text-xs py-3 px-4 pr-8 mb-3 rounded" id="job-type">
-                <option></option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>+5</option>
-              </select>
-            </div>
-
-          </div>
-          
-      
-        </div>
-
 
             <div class="-mx-3 md:flex mb-6">
               <div class="md:w-full px-6">

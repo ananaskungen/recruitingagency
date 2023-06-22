@@ -21,10 +21,12 @@ return new class extends Migration
             $table->string('linkedin_profile')->nullable();
             $table->string('github_profile')->nullable();
             $table->string('location');
-            $table->boolean('is_remote');
-            $table->string('video')->nullable();
-            $table->string('website');
-            $table->text('additional_info')->nullable();
+            $table->string('is_remote');
+            $table->string('is_working');
+            $table->string('field');
+            $table->string('job_type');
+            $table->string('website')->nullable();;
+            $table->text('additional_info')->nullable(); 
             $table->timestamps();
         });
     }

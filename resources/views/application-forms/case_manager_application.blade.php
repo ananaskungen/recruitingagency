@@ -1,7 +1,7 @@
 <x-visitor-layout>
    
   <div class="flex justify-center mt-10">
-    <h1 class="bold text-xl"> APPLICATION FORM CASE MANAGERt </h1>
+    <h1 class="bold text-xl"> APPLICATION FORM CASE MANAGER </h1>
   </div>
   
       <div class=" mx-auto max-w-6xl py-20 px-12 lg:px-24  mb-24">
