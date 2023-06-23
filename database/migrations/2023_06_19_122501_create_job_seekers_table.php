@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('is_working');
             $table->string('field');
             $table->string('job_type');
-            $table->string('website')->nullable();;
+            $table->string('website')->nullable();
             $table->text('additional_info')->nullable(); 
             $table->timestamps();
         });

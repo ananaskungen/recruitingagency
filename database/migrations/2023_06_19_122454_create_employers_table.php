@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('phone_number');
             $table->string('linkedin_profile')->nullable();
             $table->string('location');
-            $table->boolean('is_remote');
-            $table->string('website');
+            $table->string('is_remote');
+            $table->string('website')->nullable();
             $table->text('additional_info')->nullable();
             $table->string('company');
             $table->timestamps();

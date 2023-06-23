@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('github_profile')->nullable();
             $table->string('location');
             $table->string('is_remote');
-            $table->string('website');
+            $table->string('website')->nullable();
             $table->text('additional_info')->nullable();
             $table->string('is_working');
             $table->timestamps();

@@ -46,28 +46,22 @@
             </div>
 
             <div class="flex">
-
-              <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-                <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="Gender">
-                  Gender
-                </label>
-                <div>
-                  <select required class="w-full bg-gray-200 border border-gray-200 text-black text-xs py-3 px-4 pr-8 mb-3 rounded" id="gender" name="gender">
-                    <option></option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                    <option value="None of the above">None of the above</option>
-                  </select>
-                </div>
-
-              </div>
               <div class="md:w-1/2 px-3">
                 <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="location">
-                Location
+                  Location
                 </label>
                 <input required class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="location" type="text" name="location" placeholder="Stockholm, Sweden">
               </div>
-          
+
+        
+              <div class="md:w-1/2 px-3">
+                <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="company">
+                Company
+                </label>
+                <input required class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="company" type="text" name="company" placeholder="">
+              </div>
+              
+            </div>
           </div>
 
 
@@ -75,7 +69,7 @@
 
             <div class="md:w-1/2 px-3 mb-6 md:mb-0">
               <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="remote">
-                Do you wish to work remotely?
+               Remote?
               </label>
               <div>
                 <select required class="w-full bg-gray-200 border border-gray-200 text-black text-xs py-3 px-4 pr-8 mb-3 rounded" id="is_remote" name="is_remote">
@@ -86,36 +80,9 @@
               </div>
 
             </div>
-            <div class="md:w-1/2 px-3">
-              <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="working">
-              Are you currently working?
-              </label>
-              <select required class="w-full bg-gray-200 border border-gray-200 text-black text-xs py-3 px-4 pr-8 mb-3 rounded" id="is_remote" name="is_working">
-                <option></option>
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
-              </select>
-            </div>
+    
         
         </div>
-
-        <div class="flex">
-
-          <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-            <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="field">
-              Fields you wish to work in
-            </label>
-            <div>
-              <input required class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="title" type="text" name="field" placeholder="Real Estate">
-
-            </div>
-
-          </div>
-          
-      
-        </div>
-
-
             <div class="-mx-3 md:flex mb-6">
               <div class="md:w-full px-6">
                 <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="linkedin">
@@ -130,31 +97,10 @@
                 </label>
                 <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="website" name="website" type="text" placeholder="">
               </div>
-
-              <div class="md:w-full px-6">
-                <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="github">
-                  Github profile (Optional)
-                </label>
-                <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="github" name="github_profile" type="text" placeholder="">
-              </div>
             </div>
 
             <div class="-mx-3 md:flex mb-2">
               <div class=" flex flex-col">
-                
-                <div class="px-6">
-                  <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="job-type">
-                    Job Type*
-                  </label>
-                  <div>
-                    <select required class="w-full bg-gray-200 border border-gray-200 text-black text-xs py-3 px-4 pr-8 mb-3 rounded" name="job_type" id="job-type">
-                      <option></option>
-                      <option value="full-time">Full-Time</option>
-                      <option value="part-time">Part-Time</option>
-                      <option value="internship">Internship</option>
-                    </select>
-                  </div>
-                </div>
 
                 <div class="px-6">
                   <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="attachments">
@@ -164,15 +110,6 @@
                     <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="attachments" name="file_path_attachment[]" type="file" multiple>
                   </div>
                 </div>
-                
-              <div class="px-6">
-                  <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="video">
-                    Introduction Video
-                  </label>
-                  <div>
-                    <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="video" name="file_path_video[]" type="file" multiple>
-                  </div>
-                </div> 
 
               <div class=" w-full">
                 <div class="px-3 mb-6 md:mb-0">

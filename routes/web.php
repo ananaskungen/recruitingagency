@@ -85,7 +85,7 @@ Route::get('/register/case_manager/application-form-case-manager', function () {
     return view('application-forms/case_manager_application');
 })->name('application-form-case-manager');
 
-Route::post('/register/job_seeker/application-form-job-seeker/thank-you', [CaseManagerController::class, 'store'])->name('case_manager-applicant.store');
+Route::post('/register/case_manager/application-form-case-manager/thank-you', [CaseManagerController::class, 'store'])->name('case_manager-applicant.store');
 
 
 /* Employer Application */
@@ -94,7 +94,7 @@ Route::get('/register/employer/application-form-employer', function () {
     return view('application-forms/employer_application');
 })->name('application-form-employer');
 
-Route::post('/register/job_seeker/application-form-employer/thank-you', [EmployerController::class, 'store'])->name('employer-applicant.store');
+Route::post('/register/employer/application-form-employer/thank-you', [EmployerController::class, 'store'])->name('employer-applicant.store');
 
 
 
