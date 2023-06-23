@@ -38,6 +38,7 @@ class CaseManagerController extends Controller
             'gender' => 'required|string',
             'email' => 'required|string|email',
             'phone_number' => 'required|string',
+            'past_experience' => 'required|string',
             'linkedin_profile' => 'nullable|url',
             'github_profile' => 'nullable|url',
             'location' => 'required|string',
@@ -67,28 +68,28 @@ class CaseManagerController extends Controller
     
         // Check if the email already exists
         $email = $request->input('email');
-        $existingJobSeeker = CaseManager::where('email', $email)->first();
-        if ($existingJobSeeker) {
+        $existingCaseManager = CaseManager::where('email', $email)->first();
+        if ($existingCaseManager) {
             return back()->with('error', 'That email already exists.');
         }
     
         // Create a new job seeker record
-        $jobSeeker = new CaseManager();
-        $jobSeeker->first_name = $request->input('first_name');
-        $jobSeeker->last_name = $request->input('last_name');
-        $jobSeeker->gender = $request->input('gender');
-        $jobSeeker->email = $request->input('email');
-        $jobSeeker->phone_number = $request->input('phone_number');
-        $jobSeeker->linkedin_profile = $request->input('linkedin_profile');
-        $jobSeeker->github_profile = $request->input('github_profile');
-        $jobSeeker->location = $request->input('location');
-        $jobSeeker->is_remote = $request->input('is_remote');
-        $jobSeeker->is_working = $request->input('is_working');
-        $jobSeeker->job_type = $request->input('job_type');
-        $jobSeeker->field = $request->input('field');
-        $jobSeeker->website = $request->input('website');
-        $jobSeeker->additional_info = $request->input('additional_info');
-        $jobSeeker->save();
+        $caseManager = new CaseManager();
+        $caseManager->first_name = $request->input('first_name');
+        $caseManager->last_name = $request->input('last_name');
+        $caseManager->gender = $request->input('gender');
+        $caseManager->email = $request->input('email');
+        $caseManager->phone_number = $request->input('phone_number');
+        $caseManager->past_experience = $request->input('past_experience');
+        $caseManager->linkedin_profile = $request->input('linkedin_profile');
+        $caseManager->github_profile = $request->input('github_profile');
+        $caseManager->location = $request->input('location');
+        $caseManager->is_remote = $request->input('is_remote');
+        $caseManager->is_working = $request->input('is_working');
+        $caseManager->field = $request->input('field');
+        $caseManager->website = $request->input('website');
+        $caseManager->additional_info = $request->input('additional_info');
+        $caseManager->save();
 
         if ($request->hasFile('file_path_video')) {
             foreach ($request->file('file_path_video') as $videoFile) {
@@ -99,7 +100,7 @@ class CaseManagerController extends Controller
                     $video = new Attachment();
                     $video->file_path_video = $videoPath;
                     $video->file_type = 'video';
-                    $video->job_seeker_id = $jobSeeker->id;
+                    $video->case_manager_id = $caseManager->id;
                     $video->save();
                 } else {
                     // Log any error messages related to the attachment file upload
@@ -120,7 +121,7 @@ class CaseManagerController extends Controller
                     $attachment = new Attachment();
                     $attachment->file_path_attachment = $attachmentPath;
                     $attachment->file_type = 'attachment';
-                    $attachment->job_seeker_id = $jobSeeker->id;
+                    $attachment->case_manager_id = $caseManager->id;
                     $attachment->save();
                 } else {
                     // Log any error messages related to the attachment file upload

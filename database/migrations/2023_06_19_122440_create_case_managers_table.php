@@ -18,15 +18,15 @@ return new class extends Migration
             $table->string('gender');
             $table->string('email')->unique();
             $table->string('phone_number');
-            $table->boolean('past_experience');
+            $table->string('field');
+            $table->string('past_experience');
             $table->string('linkedin_profile')->nullable();
             $table->string('github_profile')->nullable();
             $table->string('location');
-            $table->string('video')->nullable();
-            $table->boolean('is_remote');
+            $table->string('is_remote');
             $table->string('website');
             $table->text('additional_info')->nullable();
-            $table->boolean('are_you_currently_working');
+            $table->string('is_working');
             $table->timestamps();
         });
     }

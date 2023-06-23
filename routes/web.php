@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CaseManagerController;
+use App\Http\Controllers\EmployerController;
 use App\Http\Controllers\JobSeekerController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -77,15 +79,24 @@ Route::get('/thank-you', function () {
 });
 
 
+/* Case manager application */
 Route::get('/register/case_manager/application-form-case-manager', function () {
-    // Logic for case manager registration
+    // Logic for job seeker registration
     return view('application-forms/case_manager_application');
 })->name('application-form-case-manager');
 
+Route::post('/register/job_seeker/application-form-job-seeker/thank-you', [CaseManagerController::class, 'store'])->name('case_manager-applicant.store');
+
+
+/* Employer Application */
 Route::get('/register/employer/application-form-employer', function () {
-    // Logic for agency registration
+    // Logic for job seeker registration
     return view('application-forms/employer_application');
 })->name('application-form-employer');
+
+Route::post('/register/job_seeker/application-form-employer/thank-you', [EmployerController::class, 'store'])->name('employer-applicant.store');
+
+
 
 
 /* ********* */
