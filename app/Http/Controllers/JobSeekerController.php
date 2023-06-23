@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\JobSeeker;
 use App\Models\Attachment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 
 class JobSeekerController extends Controller
@@ -44,7 +45,7 @@ class JobSeekerController extends Controller
             'job_type' => 'required|string',
             'is_working' => 'required|string',
             'field' => 'required|string',
-            'file_path_video' => 'nullable|file|mimes:mp4|max:5000',
+            'file_path_video' => 'nullable|file|mimes:mp4|max:5000', 
             'file_path_attachment' => 'nullable|file|mimes:pdf,doc,docx,jpg,jpeg,png|max:5000',
             'website' => 'nullable|url',
             'additional_info' => 'nullable|string',
@@ -88,21 +89,24 @@ class JobSeekerController extends Controller
         $jobSeeker->website = $request->input('website');
         $jobSeeker->additional_info = $request->input('additional_info');
         $jobSeeker->save();
-     
-         // Handle video file upload if provided
-         if ($request->hasFile('file_path_video')) {
-            $videoFile = $request->file('file_path_video');
-            if ($videoFile->isValid()) {
-                $videoPath = $videoFile->store('public/videos');
+
+        if ($request->hasFile('file_path_video')) {
+            foreach ($request->file('file_path_video') as $videoFile) {
+                if ($videoFile->isValid()) {
+                    $videoPath = $videoFile->store('public/videos');
     
-                // Store the video in the attachments table
-                $attachment = new Attachment();
-                $attachment->file_path = $videoPath;
-                $attachment->file_type = 'video';
-                $attachment->job_seeker_id = $jobSeeker->id;
-                $attachment->save();
-            } else {
-                return back()->with('error', 'Failed to upload video file.');
+                    // Store each attachment in the attachments table
+                    $video = new Attachment();
+                    $video->file_path_video = $videoPath;
+                    $video->file_type = 'video';
+                    $video->job_seeker_id = $jobSeeker->id;
+                    $video->save();
+                } else {
+                    // Log any error messages related to the attachment file upload
+                    $error = $videoFile->getErrorMessage();
+                    Log::error('Video file upload error: ' . $error);
+                    return back()->with('error', 'Failed to upload video file.');
+                }
             }
         }
     
@@ -114,17 +118,20 @@ class JobSeekerController extends Controller
     
                     // Store each attachment in the attachments table
                     $attachment = new Attachment();
-                    $attachment->file_path = $attachmentPath;
+                    $attachment->file_path_attachment = $attachmentPath;
                     $attachment->file_type = 'attachment';
                     $attachment->job_seeker_id = $jobSeeker->id;
                     $attachment->save();
                 } else {
+                    // Log any error messages related to the attachment file upload
+                    $error = $attachmentFile->getErrorMessage();
+                    Log::error('Attachment file upload error: ' . $error);
                     return back()->with('error', 'Failed to upload attachment file.');
                 }
             }
         }
 
-         return redirect('/');
+         return redirect('/thank-you');
      }
      
      

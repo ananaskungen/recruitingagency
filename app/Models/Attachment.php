@@ -2,14 +2,17 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Employer;
+use App\Models\JobSeeker;
+use App\Models\CaseManager;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Attachment extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['job_seeker_id', 'employer_id', 'case_manager_id', 'file_path'];
+    protected $fillable = ['job_seeker_id', 'employer_id', 'case_manager_id', 'file_path_attachment', 'file_path_video', 'file_type'];
 
     public function jobSeeker()
     {

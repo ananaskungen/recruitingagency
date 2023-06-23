@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('job_seeker_id')->nullable()->constrained('job_seekers')->onDelete('cascade');
             $table->foreignId('employer_id')->nullable()->constrained('employers')->onDelete('cascade');
             $table->foreignId('case_manager_id')->nullable()->constrained('case_managers')->onDelete('cascade');
-            $table->string('file_path_video')->nullable();
+            $table->string('file_path_video')->nullable(); 
             $table->string('file_path_attachment')->nullable();
             $table->string('file_type');
             $table->timestamps();

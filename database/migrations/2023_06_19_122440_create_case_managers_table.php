@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->string('gender');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('phone_number');
             $table->boolean('past_experience');
             $table->string('linkedin_profile')->nullable();

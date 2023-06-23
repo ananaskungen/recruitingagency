@@ -161,18 +161,18 @@
                     Attachments
                   </label>
                   <div>
-                    <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="attachments" name="file_path_attachment" type="file" multiple>
+                    <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="attachments" name="file_path_attachment[]" type="file" multiple>
                   </div>
                 </div>
                 
-                <div class="px-6">
+              <div class="px-6">
                   <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="video">
                     Introduction Video
                   </label>
                   <div>
-                    <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="video" name="file_path_video" type="file" multiple>
+                    <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3" id="video" name="file_path_video[]" type="file" multiple>
                   </div>
-                </div>
+                </div> 
 
               <div class=" w-full">
                 <div class="px-3 mb-6 md:mb-0">
