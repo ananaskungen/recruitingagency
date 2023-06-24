@@ -23,6 +23,8 @@ return new class extends Migration
             $table->string('website')->nullable();
             $table->text('additional_info')->nullable();
             $table->string('company');
+            $table->boolean('is_approved')->default(false);
+
             $table->timestamps();
         });
     }

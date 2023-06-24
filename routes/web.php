@@ -1,10 +1,13 @@
 <?php
 
-use App\Http\Controllers\CaseManagerController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SaNaEController;
+use App\Http\Controllers\SaNaCmController;
+use App\Http\Controllers\SaNaJsController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EmployerController;
 use App\Http\Controllers\JobSeekerController;
-use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CaseManagerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -117,13 +120,36 @@ Route::middleware('auth')->group(function () {
 
 
 
-/* Super Admin Panel Related */
+/* Super Admin Panel */
 Route::middleware(['auth','verified'])->group(function () {
-    /* Approved Application */
+
+    /* New Applications Section */
+    Route::get('/dashboard/job-seeker-applications', [SaNaJsController::class, 'index']
+    )->name('job-seeker-applications');
+
+    Route::get('/dashboard/case-manager-applications', [SaNaCmController::class, 'index']
+    )->name('case-manager-applications');
+
+    Route::get('/dashboard/employer-applicantions', [SaNaEController::class, 'index']
+    )->name('employer-applications');
+    
+
+    /* edit job seeker: */
+    Route::get('/dashboard/job-seeker-applications/edit/{id}', [SaNaJsController::class, 'edit'])
+    ->name('job-seeker.edit');
+
+    Route::get('/{attachmentPath}', [SaNaJsController::class, 'show'])
+        ->name('attachments.show');
+
+
+    /* Approved Application section */
     Route::get('/dashboard/approved-job-seeker-applications', function () {
         // Logic for agency registration
         return view('super-admin-related/approved_job_seeker');
     })->name('approved-job-seeker');
+
+    Route::get('/dashboard/job-seeker-applications', [SaNaJsController::class, 'index']
+    )->name('job-seeker-applications');
 
     Route::get('/dashboard/approved-case-manager-applications', function () {
         // Logic for agency registration
@@ -135,34 +161,21 @@ Route::middleware(['auth','verified'])->group(function () {
         return view('super-admin-related/approved_employer');
     })->name('approved-employer');
 
-    /* Recruiting Section */
-    Route::get('/dashboard/job-seeker-applications', function () {
-        // Logic for agency registration
-        return view('super-admin-related/job_seeker_applications');
-    })->name('job-seeker-applications');
-
-    Route::get('/dashboard/case-manager-applications', function () {
-        // Logic for agency registration
-        return view('super-admin-related/case_manager_applications');
-    })->name('case-manager-applications');
-
-    Route::get('/dashboard/employer-applicants', function () {
-        // Logic for agency registration
-        return view('super-admin-related/employer_applications');
-    })->name('employer-applications');
     
 
-    
+    /* Reports Section */    
     Route::get('/dashboard/reports', function () {
         // Logic for agency registration
         return view('super-admin-related/reports');
     })->name('reports');
 
+    /* All Users Section */    
     Route::get('/dashboard/users', function () {
         // Logic for agency registration
         return view('super-admin-related/users');
     })->name('users');
     
+    /* Settings Section */
     Route::get('/dashboard/settings', function () {
         // Logic for agency registration
         return view('super-admin-related/settings');

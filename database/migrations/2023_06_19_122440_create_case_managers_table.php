@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('website')->nullable();
             $table->text('additional_info')->nullable();
             $table->string('is_working');
+            $table->boolean('is_approved')->default(false);
             $table->timestamps();
         });
     }

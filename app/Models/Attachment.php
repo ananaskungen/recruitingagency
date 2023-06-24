@@ -14,6 +14,17 @@ class Attachment extends Model
 
     protected $fillable = ['job_seeker_id', 'employer_id', 'case_manager_id', 'file_path_attachment', 'file_path_video', 'file_type'];
 
+
+    public function getFilePathAttribute()
+    {
+        return asset('storage/' . $this->attributes['file_path_attachment']);
+    }
+
+    public function getFilePathVideoAttribute()
+    {
+        return asset('storage/' . $this->attributes['file_path_video']);
+    }
+
     public function jobSeeker()
     {
         return $this->belongsTo(JobSeeker::class);

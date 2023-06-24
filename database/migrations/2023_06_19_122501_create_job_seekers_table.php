@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('job_type');
             $table->string('website')->nullable();
             $table->text('additional_info')->nullable(); 
+            $table->boolean('is_approved')->default(false);
             $table->timestamps();
         });
     }
