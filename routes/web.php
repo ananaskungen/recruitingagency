@@ -26,6 +26,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/login', function () {
+    return view('login');
+});
+
 Route::get('/we-are', function () {
     // Logic for agency registration
     return view('we_are');
@@ -139,8 +143,39 @@ Route::middleware(['auth','verified'])->group(function () {
     ->name('job-seeker.edit');
 
     Route::get('/{attachmentPath}', [SaNaJsController::class, 'show'])
-        ->name('attachments.show');
+    ->name('attachments.show');
 
+    Route::get('/{videoPath}', [SaNaJsController::class, 'showVideo'])
+    ->name('videos.show');
+    
+
+
+    /* edit Case Manager: */
+    Route::get('/dashboard/case-manager-applications/edit/{id}', [SaNaCmController::class, 'edit'])
+    ->name('case-manager.edit');
+
+    Route::get('/{attachmentPath}', [SaNaCmController::class, 'show'])
+    ->name('attachments.show');
+
+    Route::get('/{videoPath}', [SaNaCmController::class, 'showVideo'])
+    ->name('videos.show');
+    
+
+      /* edit Employer: */
+      Route::resource('/dashboard/employer-applications', SaNaEController::class);
+
+      Route::get('/dashboard/employer-applications/edit/{id}', [SaNaEController::class, 'edit'])
+      ->name('employer.edit');
+  
+      Route::get('/{attachmentPath}', [SaNaEController::class, 'show'])
+      ->name('attachments.show');
+  
+      Route::get('/{videoPath}', [SaNaEController::class, 'showVideo'])
+      ->name('videos.show');
+
+      Route::patch('/dashboard/employer-applications/{employer}', [SaNaEController::class, 'update'])
+      ->name('employer.update');
+  
 
     /* Approved Application section */
     Route::get('/dashboard/approved-job-seeker-applications', function () {

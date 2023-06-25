@@ -25,6 +25,7 @@ class CaseManager extends Model
         'additional_info', 
         'is_working', 
         'field', 
+        
     ];
 
     public function attachments()

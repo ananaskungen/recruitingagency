@@ -20,7 +20,8 @@ class Employer extends Model
         'is_remote', 
         'website', 
         'additional_info', 
-        'company'
+        'company',
+        'is_approved'
     ];
 
     public function attachments()

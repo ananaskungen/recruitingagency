@@ -47,6 +47,16 @@ class SaNaJsController extends Controller
         return response()->file(asset($publicPath));
     }
     
+    public function showVideo($videoPath)
+    {
+        $videoStoragePath = storage_path('app/public/' . $videoPath);
+
+        if (!file_exists($videoStoragePath)) {
+            abort(404);
+        }
+
+        return response()->file($videoStoragePath);
+    }
     
     
     

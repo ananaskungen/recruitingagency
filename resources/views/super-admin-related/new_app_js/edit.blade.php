@@ -133,27 +133,24 @@
                                 <li>
                                     @php
                                         $attachmentPath = str_replace('public/', '', $attachment->file_path_attachment);
+                                        $videoPath = str_replace('public/', '', $attachment->file_path_video);
                                     @endphp
-                    
+                                    
                                     @if ($attachment->file_type === 'image')
                                         <img src="{{ url('attachments/' . $attachmentPath) }}" alt="Image">
-                                    @else
-                                        <a href="{{ route('attachments.show', ['attachmentPath' => $attachmentPath]) }}" target="_blank">
-                                            {{ $attachment->file_type }}
-                                        </a>
-                                    @endif
-                    
-                                    @if ($attachment->file_type === 'video')
-                                        <a href="{{ route('attachments.show', ['attachmentPath' => $attachmentPath]) }}" target="_blank">
+                                    @elseif ($attachment->file_type === 'video')
+                                        <a href="{{ url($videoPath) }}" target="_blank">
                                             Open Video
                                         </a>
-                                    @elseif ($attachment->file_type === 'pdf' || $attachment->file_type === 'jpeg')
+                                    @else
                                         <a href="{{ route('attachments.show', ['attachmentPath' => $attachmentPath]) }}" target="_blank">
                                             Open in New Tab
                                         </a>
-                                        <a href="{{ route('attachments.show', ['attachmentPath' => $attachmentPath]) }}" download>
-                                            Download
-                                        </a>
+                                        @if ($attachment->file_type === 'pdf' || $attachment->file_type === 'jpeg')
+                                            <a href="{{ route('attachments.show', ['attachmentPath' => $attachmentPath]) }}" download>
+                                                Download
+                                            </a>
+                                        @endif
                                     @endif
                                 </li>
                             @endforeach
@@ -161,7 +158,6 @@
                     @else
                         <p>No attachments found.</p>
                     @endif
-                    
                     
                     
 </x-admin-layout>
