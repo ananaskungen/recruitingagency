@@ -1,15 +1,5 @@
-<x-admin-layout>
-  
-    {{-- 
-          <div class=" flex justify-end p-6">
-              <a href="{{ route('jobseekers.create')}}" class=" right-0 flex items-center
-              text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 rounded-full text-sm px-5 py-2.5 text-center 
-              mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 font-bold">
-                  Lägg till ny Kategori
-              </a> 
-          </div>
-           --}}
-  
+<x-admin-layout>  
+
   
       <div class="w-full h-screen bg-gray-100">
           <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -19,7 +9,7 @@
               </div>
               <div class="-mb-2 py-4 flex flex-wrap flex-grow justify-between">
                 <div class="flex items-center py-2">
-                  <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-searcg" type="text" placeholder="Search">
+                  <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-search" type="text" placeholder="Search">
                 </div>
                 <div class="flex items-center py-2">
                   <a href=""
@@ -60,7 +50,7 @@
                     <!-- HEAD end -->
                     <!-- BODY start -->
                     <tbody class="bg-white">
-                      @foreach ($employers as $employer)
+                @foreach ($employers as $employer)
                       <tr>
                         <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                           <input class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out" type="checkbox" />
@@ -126,4 +116,4 @@
     
     
         
-    </x-admin-layout>
+</x-admin-layout>

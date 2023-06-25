@@ -134,7 +134,7 @@ Route::middleware(['auth','verified'])->group(function () {
     Route::get('/dashboard/case-manager-applications', [SaNaCmController::class, 'index']
     )->name('case-manager-applications');
 
-    Route::get('/dashboard/employer-applicantions', [SaNaEController::class, 'index']
+    Route::get('/dashboard/employer-applications', [SaNaEController::class, 'index']
     )->name('employer-applications');
     
 
@@ -162,7 +162,6 @@ Route::middleware(['auth','verified'])->group(function () {
     
 
       /* edit Employer: */
-      Route::resource('/dashboard/employer-applications', SaNaEController::class);
 
       Route::get('/dashboard/employer-applications/edit/{id}', [SaNaEController::class, 'edit'])
       ->name('employer.edit');
@@ -175,8 +174,11 @@ Route::middleware(['auth','verified'])->group(function () {
 
       Route::patch('/dashboard/employer-applications/{employer}', [SaNaEController::class, 'update'])
       ->name('employer.update');
-  
 
+
+
+
+      
     /* Approved Application section */
     Route::get('/dashboard/approved-job-seeker-applications', function () {
         // Logic for agency registration

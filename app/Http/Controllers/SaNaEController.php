@@ -2,9 +2,15 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Employer;
+use App\Models\Attachment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+
 
 class SaNaEController extends Controller
 {
@@ -51,27 +57,34 @@ class SaNaEController extends Controller
 
         public function update(Request $request, Employer $employer)
         {
+            
+          /*   dd($employer);  */
             $request->validate([
                 'first_name' => 'required',
                 'last_name' => 'required',
                 'email' => 'required|email|unique:employers,email,' . $employer->id,
                 'phone_number' => 'required',
-                'linkedin_profile' => 'nullable|url',
                 'location' => 'required',
-                'is_remote' => 'required',
-                'website' => 'nullable|url',
+                'linkedin_profile' => 'nullable|url|max:255',
+                'website' => 'nullable|url|max:255', 
+                'is_remote' => 'required|string',
+               
                 'additional_info' => 'nullable',
+                
                 'company' => 'required',
-                'is_approved' => 'boolean',
-                // Add other validation rules for additional fields here
+                'is_approved' => 'boolean', 
             ]);
         
           
         
             $employer->update($request->all());
-        
+
+
+
             return redirect()->route('employer-applications')->with('success', 'Update successful!');
         }
+
+        
         
         
 }

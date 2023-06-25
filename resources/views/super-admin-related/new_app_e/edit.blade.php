@@ -24,7 +24,7 @@
             <div class="p-6 flex flex-col ">
                 <div class="container">
 
-                    <form action="{{ route('employer.update', ['employer' => $employer]) }}" method="POST"  enctype="multipart/form-data">
+                    <form action="{{ route('employer.update', ['employer' => $employer->id]) }}" method="POST"  enctype="multipart/form-data">
                         @csrf
                         @method('PATCH')
 
@@ -46,9 +46,16 @@
                                 <input name="email" placeholder="Name" value="{{ $employer->email }}" class="border" >
                             </div>
 
+                          
+
                             <div>
                                 <label>Tel:</label>
                                 <input name="phone_number" placeholder="Name" value="{{ $employer->phone_number }}" class="border" >
+                            </div>
+
+                            <div>
+                                <label>Company:</label>
+                                <input name="company" placeholder="None" value="{{ $employer->company }}" class="border" >
                             </div>
 
 
@@ -64,26 +71,29 @@
                                     <input name="linkedin_profile" placeholder="None" value="{{ $employer->linkedin_profile }}" class="border">
                                 </div>
 
-                                <div>
+                               <div>
                                     <label>Website:</label>
                                     <input name="website" placeholder="None" value="{{ $employer->website }}" class="border" >
-                                </div>
+                                </div> 
                             </div>
-
+                            
                             <div>
                                 <label>Remote:</label>
                                 <input name="is_remote" placeholder="Name" value="{{ $employer->is_remote }}" class="border" >
                             </div>
-
-
+                            
+           
                             <div>
                                 <label>Additional Information:</label>
                                 <input name="additional_info" placeholder="None" value="{{ $employer->additional_info }}" class="border w-full" >
                             </div>
+                                         
+                          
+                                     
 
                             <div>
                                 <label>Approve:</label>
-                                <input name="is_approved" placeholder="None" value="{{ $employer->is_approved }}" class="border w-full" >
+                                <input name="is_approved" placeholder="None" value="{{ $employer->is_approved }}" class="border " >
                             </div>
 
                             <input type="submit"  class="w-24 inline-block px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline">
