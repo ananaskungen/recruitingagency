@@ -10,7 +10,6 @@
           </div>
            --}}
   
-  
       <div class="w-full h-screen bg-gray-100">
           <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="flex flex-col">
@@ -60,6 +59,8 @@
                     <!-- HEAD end -->
                     <!-- BODY start -->
                     @foreach ($jobSeekers as $jobSeeker)
+                      @if ($jobSeeker->is_approved == 0)
+
                     <tbody class="bg-white">
                       <tr>
                         <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
@@ -112,6 +113,7 @@
                  
                     </tbody>
                     <!-- BODY end -->
+                    @endif
                     @endforeach
                   </table>
                 </div>
@@ -119,11 +121,5 @@
             </div>
           </div>
         </div>
-        
-        
-    
-     
-    
-    
         
     </x-admin-layout>
