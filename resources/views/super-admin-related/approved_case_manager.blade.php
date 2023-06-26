@@ -22,9 +22,9 @@
                   <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-searcg" type="text" placeholder="Search">
                 </div>
                 <div class="flex items-center py-2">
-                  <a href=""
+                  <a href="{{-- Assign to SA --}}"
                      class="inline-block px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline">
-                    New Case Manager (Manually)
+                     Assign Case
                   </a>
                 </div>
               </div>

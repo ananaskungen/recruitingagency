@@ -1,8 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SaApEController;
 use App\Http\Controllers\SaNaEController;
 use App\Http\Controllers\SaApCmController;
+use App\Http\Controllers\SaApJsController;
 use App\Http\Controllers\SaNaCmController;
 use App\Http\Controllers\SaNaJsController;
 use App\Http\Controllers\ProfileController;
@@ -200,19 +202,15 @@ Route::middleware(['auth','verified'])->group(function () {
     /* Approved Application section */
 
     /* Approved Job Seekers */
-      Route::get('/dashboard/approved-job-seeker-applications', function () {
-        // Logic for agency registration
-        return view('super-admin-related/approved_job_seeker');
-    })->name('approved-job-seeker');
+    Route::get('/dashboard/approved-job-seeker-applications', [SaApJsController::class, 'index']
+    )->name('approved-job-seeker');
 
     Route::get('/dashboard/approved-case-manager-applications', [SaApCmController::class, 'index']
     )->name('approved-case-manager');
 
 
-    Route::get('/dashboard/approved-employer-applicants', function () {
-        // Logic for agency registration
-        return view('super-admin-related/approved_employer');
-    })->name('approved-employer');
+    Route::get('/dashboard/approved-employer-applications', [SaApEController::class, 'index']
+    )->name('approved-employer');
 
     
 
