@@ -90,7 +90,15 @@ class SaNaJsController extends Controller
     }
 
 
-    
+    public function destroy(JobSeeker $jobSeeker)
+    {
+        //
+        $jobSeeker->delete();
+
+        return redirect()
+            ->route('job-seeker-applications')
+            ->with('success', 'Succesfully DELETED!');
+    } 
     
     
     

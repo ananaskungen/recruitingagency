@@ -84,6 +84,18 @@ class SaNaEController extends Controller
             return redirect()->route('employer-applications')->with('success', 'Update successful!');
         }
 
+
+        public function destroy(Employer $employer)
+        {
+            //
+            $employer->delete();
+    
+            return redirect()
+                ->route('employer-applications')
+                ->with('success', 'Succesfully DELETED!');
+        } 
+    
+
         
         
         

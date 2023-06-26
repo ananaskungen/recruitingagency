@@ -151,6 +151,8 @@ Route::middleware(['auth','verified'])->group(function () {
     Route::patch('/dashboard/job-seeker-applications/{jobSeeker}', [SaNaJsController::class, 'update'])
     ->name('job_seeker.update');
 
+    Route::delete('/dashboard/job-seeker-applications/{jobSeeker}', [SaNaJsController::class, 'destroy'])
+    ->name('job-seeker.destroy');
 
 
     /* edit Case Manager: */
@@ -166,6 +168,9 @@ Route::middleware(['auth','verified'])->group(function () {
 
     Route::patch('/dashboard/case-manager-applications/{caseManager}', [SaNaCmController::class, 'update'])
     ->name('case-manager.update');
+
+    Route::delete('/dashboard/case-manager-applications/{caseManager}', [SaNaCmController::class, 'destroy'])
+    ->name('case-manager.destroy');
 
 
     
@@ -183,6 +188,9 @@ Route::middleware(['auth','verified'])->group(function () {
 
       Route::patch('/dashboard/employer-applications/{employer}', [SaNaEController::class, 'update'])
       ->name('employer.update');
+
+      Route::delete('/dashboard/employer-applications/{employer}', [SaNaEController::class, 'destroy'])
+      ->name('employer.destroy');
 
 
 

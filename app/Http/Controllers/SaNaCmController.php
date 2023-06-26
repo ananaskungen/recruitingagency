@@ -82,5 +82,16 @@ class SaNaCmController extends Controller
     }
 
 
+    public function destroy(CaseManager $caseManager)
+    {
+        //
+        $caseManager->delete();
+
+        return redirect()
+            ->route('case-manager-applications')
+            ->with('success', 'Succesfully DELETED!');
+    } 
+
+
 
 }

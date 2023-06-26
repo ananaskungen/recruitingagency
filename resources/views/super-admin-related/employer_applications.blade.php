@@ -49,8 +49,8 @@
                     </thead>
                     <!-- HEAD end -->
                     <!-- BODY start -->
+                    @foreach ($employers as $employer)
                     <tbody class="bg-white">
-                @foreach ($employers as $employer)
                       <tr>
                         <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                           <input class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out" type="checkbox" />
@@ -85,7 +85,7 @@
                               </a>
   
                  
-                              <form class="d-inline-block" method="POST" action="{{-- {{ route('job-seeker.delete', $jobSeeker->id) }} --}}">
+                              <form class="d-inline-block" method="POST" action="{{ route('employer.destroy', $employer->id) }}">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger confirm">
@@ -102,8 +102,8 @@
                  
                     </tbody>
                     <!-- BODY end -->
+                    @endforeach
                   </table>
-                  @endforeach
                 </div>
               </div>
             </div>
