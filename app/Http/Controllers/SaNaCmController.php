@@ -50,5 +50,37 @@ class SaNaCmController extends Controller
     }
     
 
+    public function update(Request $request, CaseManager $caseManager)
+    {
+        
+      /*   dd($employer);  */
+        $request->validate([
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'gender' => 'required',
+            'email' => 'required|email|unique:employers,email,' . $caseManager->id,
+            'phone_number' => 'required',
+            'location' => 'required',
+            'linkedin_profile' => 'nullable|url|max:255',
+            'github_profile' => 'nullable|url|max:255',
+            'website' => 'nullable|url|max:255', 
+            'is_remote' => 'required|string',
+            'is_working' => 'required|string',
+            'past_experience' => 'required|string',
+            'field' => 'required|string',
+            'additional_info' => 'nullable',
+            'is_approved' => 'boolean', 
+        ]);
+    
+      
+    
+        $caseManager->update($request->all());
+
+
+
+        return redirect()->route('case-manager-applications')->with('success', 'Update successful!');
+    }
+
+
 
 }

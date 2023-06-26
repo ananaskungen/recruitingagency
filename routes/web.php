@@ -148,6 +148,9 @@ Route::middleware(['auth','verified'])->group(function () {
     Route::get('/{videoPath}', [SaNaJsController::class, 'showVideo'])
     ->name('videos.show');
     
+    Route::patch('/dashboard/job-seeker-applications/{jobSeeker}', [SaNaJsController::class, 'update'])
+    ->name('job_seeker.update');
+
 
 
     /* edit Case Manager: */
@@ -159,6 +162,12 @@ Route::middleware(['auth','verified'])->group(function () {
 
     Route::get('/{videoPath}', [SaNaCmController::class, 'showVideo'])
     ->name('videos.show');
+
+
+    Route::patch('/dashboard/case-manager-applications/{caseManager}', [SaNaCmController::class, 'update'])
+    ->name('case-manager.update');
+
+
     
 
       /* edit Employer: */

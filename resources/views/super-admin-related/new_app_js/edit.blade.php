@@ -25,89 +25,89 @@
                 <div class="p-6 flex flex-col ">
                     <div class="container">
 
-                        <form {{-- action="{{ route('job_seeker.update', ['jobseeker' => $jobseeker]) }}" --}} method="POST">
+                        <form action="{{ route('job_seeker.update', ['jobSeeker' => $jobSeeker]) }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            @method('PUT')
+                            @method('PATCH')
 
                             <div class="flex flex-col gap-5">
 
                                 <div>
 
                                     <label>First Name:</label>
-                                    <input name="name" placeholder="Name" value="{{ $jobSeeker->first_name }}" class="border" >
+                                    <input name="first_name" placeholder="Name" value="{{ $jobSeeker->first_name }}" class="border" >
                                 </div>
                                 
                                 <div>
                                     <label>Last Name:</label>
-                                    <input name="name" placeholder="Name" value="{{ $jobSeeker->last_name }}" class="border" >
+                                    <input name="last_name" placeholder="Name" value="{{ $jobSeeker->last_name }}" class="border" >
                                 </div>
 
                                 <div>
                                     <label>Email:</label>
-                                    <input name="name" placeholder="Name" value="{{ $jobSeeker->email }}" class="border" >
+                                    <input name="email" placeholder="Name" value="{{ $jobSeeker->email }}" class="border" >
                                 </div>
 
                                 <div>
                                     <label>Tel:</label>
-                                    <input name="name" placeholder="Name" value="{{ $jobSeeker->phone_number }}" class="border" >
+                                    <input name="phone_number" placeholder="Name" value="{{ $jobSeeker->phone_number }}" class="border" >
                                 </div>
 
                                 <div>
                                     <label>Gender:</label>
-                                    <input name="name" placeholder="Name" value="{{ $jobSeeker->gender }}" class="border" >
+                                    <input name="gender" placeholder="Name" value="{{ $jobSeeker->gender }}" class="border" >
                                 </div>
 
                                 <div>
                                     <label>Location:</label>
-                                    <input name="name" placeholder="Name" value="{{ $jobSeeker->location }}" class="border" >
+                                    <input name="location" placeholder="Name" value="{{ $jobSeeker->location }}" class="border" >
                                 </div>
 
                                 <div class="flex gap-6">
 
                                     <div>
                                         <label>LinkedIn:</label>
-                                        <input name="name" placeholder="None" value="{{ $jobSeeker->linekdin_profile }}" class="border" >
+                                        <input name="linkedin_profile" placeholder="None" value="{{ $jobSeeker->linkedin_profile }}" class="border" >
                                     </div>
                                 
                                     <div>
                                         <label>Github:</label>
-                                        <input name="name" placeholder="None" value="{{ $jobSeeker->github_profile }}" class="border" >
+                                        <input name="github_profile" placeholder="None" value="{{ $jobSeeker->github_profile }}" class="border" >
                                     </div>
 
                                     <div>
                                         <label>Website:</label>
-                                        <input name="name" placeholder="None" value="{{ $jobSeeker->website }}" class="border" >
+                                        <input name="website" placeholder="None" value="{{ $jobSeeker->website }}" class="border" >
                                     </div>
                                 </div>
 
                                 <div>
                                     <label>Remote:</label>
-                                    <input name="name" placeholder="Name" value="{{ $jobSeeker->is_remote }}" class="border" >
+                                    <input name="is_remote" placeholder="Name" value="{{ $jobSeeker->is_remote }}" class="border" >
                                 </div>
 
                                 <div>
                                     <label>Is Working?:</label>
-                                    <input name="name" placeholder="Name" value="{{ $jobSeeker->is_working }}" class="border" >
+                                    <input name="is_working" placeholder="Name" value="{{ $jobSeeker->is_working }}" class="border" >
                                 </div>
 
                                 <div>
                                     <label>Fields:</label>
-                                    <input name="name" placeholder="None" value="{{ $jobSeeker->field }}" class="border w-full" >
+                                    <input name="field" placeholder="None" value="{{ $jobSeeker->field }}" class="border w-full" >
                                 </div>
 
                                 <div>
                                     <label>Job Type:</label>
-                                    <input name="name" placeholder="None" value="{{ $jobSeeker->job_type }}" class="border w-full" >
+                                    <input name="job_type" placeholder="None" value="{{ $jobSeeker->job_type }}" class="border w-full" >
                                 </div>
 
                                 <div>
                                     <label>Additional Information:</label>
-                                    <input name="name" placeholder="None" value="{{ $jobSeeker->additional_info }}" class="border w-full" >
+                                    <input name="additional_info" placeholder="None" value="{{ $jobSeeker->additional_info }}" class="border w-full" >
                                 </div>
 
                                 <div>
                                     <label>Approve:</label>
-                                    <input name="name" placeholder="None" value="{{ $jobSeeker->is_approved }}" class="border w-full" >
+                                    <input name="is_approved" placeholder="None" value="{{ $jobSeeker->is_approved }}" class="border w-full" >
                                 </div>
 
                                 <div class="flex gap-6">

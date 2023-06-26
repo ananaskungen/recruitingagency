@@ -25,6 +25,7 @@ class JobSeeker extends Model
         'field',
         'website',
         'additional_info', 
+        'is_approved'
     ];
 
     public function attachments()
