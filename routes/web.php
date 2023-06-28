@@ -11,6 +11,9 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EmployerController;
 use App\Http\Controllers\JobSeekerController;
 use App\Http\Controllers\CaseManagerController;
+use App\Http\Controllers\SaRolesCmController;
+use App\Http\Controllers\SaRolesEController;
+use App\Http\Controllers\SaRolesJsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -212,7 +215,17 @@ Route::middleware(['auth','verified'])->group(function () {
     Route::get('/dashboard/approved-employer-applications', [SaApEController::class, 'index']
     )->name('approved-employer');
 
-    
+     /* Roles Section */
+
+     Route::get('/dashboard/roles-job-seeker', [SaRolesJsController::class, 'index']
+     )->name('roles-job-seeker');
+
+     Route::get('/dashboard/roles-case-manager', [SaRolesCmController::class, 'index']
+     )->name('roles-case-manager');
+
+     Route::get('/dashboard/roles-employer', [SaRolesEController::class, 'index']
+     )->name('roles-employer');
+
 
     /* Reports Section */    
     Route::get('/dashboard/reports', function () {

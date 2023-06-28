@@ -80,7 +80,7 @@
                           </div>
                         </td>
                         <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                          <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+                          <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-gray-800">
                               {{ $jobSeeker->is_approved ? 'Approved' : 'Not Approved' }}
                           </span>
                         </td>

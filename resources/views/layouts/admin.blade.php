@@ -73,9 +73,26 @@
 
                         <li class="flex bg-gray-500 mt-3 flex-col">
                             <h4 @click="selectedMenu !== 2 ? selectedMenu = 2 : selectedMenu = null" class="cursor-pointer px-5 py-3 bg-gray-700 text-center">
-                                Reports
+                                Roles
                             </h4>
                             <div x-show="selectedMenu === 2">
+                                <x-side-nav-link href="{{ route('roles-job-seeker') }}" :active="request()->routeIs('roles-job-seeker')">
+                                    Job Seekers
+                                </x-side-nav-link>
+                                <x-side-nav-link href="{{ route('roles-case-manager') }}" :active="request()->routeIs('roles-case-manager')">
+                                    Case Managers
+                                </x-side-nav-link>
+                                <x-side-nav-link href="{{ route('roles-employer') }}" :active="request()->routeIs('roles-employer')">
+                                    Employers
+                                </x-side-nav-link>
+                            </div>
+                        </li>
+
+                        <li class="flex bg-gray-500 mt-3 flex-col">
+                            <h4 @click="selectedMenu !== 3 ? selectedMenu = 3 : selectedMenu = null" class="cursor-pointer px-5 py-3 bg-gray-700 text-center">
+                                Reports
+                            </h4>
+                            <div x-show="selectedMenu === 3">
                                 <x-side-nav-link href="{{ route('reports') }}" :active="request()->routeIs('reports')">
                                     All Reports
                                 </x-side-nav-link>
@@ -83,10 +100,10 @@
                         </li>
 
                         <li class="flex bg-gray-500 mt-3 flex-col">
-                            <h4 @click="selectedMenu !== 3 ? selectedMenu = 3 : selectedMenu = null" class="cursor-pointer px-5 py-3 bg-gray-700 text-center">
+                            <h4 @click="selectedMenu !== 4 ? selectedMenu = 4 : selectedMenu = null" class="cursor-pointer px-5 py-3 bg-gray-700 text-center">
                                 Users
                             </h4>
-                            <div x-show="selectedMenu === 3">
+                            <div x-show="selectedMenu === 4">
                                 <x-side-nav-link href="{{ route('users') }}" :active="request()->routeIs('users')">
                                     All Users
                                 </x-side-nav-link>
@@ -94,10 +111,10 @@
                         </li>
 
                         <li class="flex bg-gray-500 mt-3 flex-col">
-                            <h4 @click="selectedMenu !== 4 ? selectedMenu = 4 : selectedMenu = null" class="cursor-pointer px-5 py-3 bg-gray-700 text-center">
+                            <h4 @click="selectedMenu !== 5 ? selectedMenu = 5 : selectedMenu = null" class="cursor-pointer px-5 py-3 bg-gray-700 text-center">
                                 Settings
                             </h4>
-                            <div x-show="selectedMenu === 4">
+                            <div x-show="selectedMenu === 5">
                                 <x-side-nav-link href="{{ route('settings') }}" :active="request()->routeIs('settings')">
                                     Settings
                                 </x-side-nav-link>
