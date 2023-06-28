@@ -45,7 +45,16 @@
 
                             <div>
                                 <label>Role:</label>
-                                <input name="is_role" placeholder="Name" value="{{ $user->is_role }}" class="border" >
+                             {{--    <input name="is_role" placeholder="Name" value="{{ $user->is_role }}" class="border" >
+                                 --}}
+                                <select required class="w-full bg-gray-200 border border-gray-200 text-black text-xs py-3 px-4 pr-8 mb-3 rounded" id="is_role" name="is_role">
+                                    <option></option>
+                                    <option value="job_seeker">Job Seeker</option>
+                                    <option value="case_manager">Case Manager</option>
+                                    <option value="employer">Employer</option>
+                                    <option value="super_admin">Super Admin</option>
+                                  </select>
+                           
                             </div>
 
                           
