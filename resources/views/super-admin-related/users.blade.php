@@ -44,7 +44,7 @@
                           Email
                         </th>
                         <th class="px-6 py-3 text-left font-medium">
-                          Tel
+                          Supervisor
                         </th>
                         <th class="px-6 py-3 text-left font-medium">
                           Role
@@ -58,8 +58,8 @@
                     </thead>
                     <!-- HEAD end -->
                     <!-- BODY start -->
-          {{--           @foreach ($jobSeekers as $jobSeeker)
-                      @if ($jobSeeker->is_approved == 0) --}}
+             @foreach ($users as $user)
+                    
 
                     <tbody class="bg-white">
                       <tr>
@@ -68,24 +68,49 @@
                         </td>
                         <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                           <div class="text-sm leading-5 text-gray-900">
-                             {{--  {{$jobSeeker->first_name}} {{ $jobSeeker->last_name }} --}}
+                             {{$user->name}}
                           </div>
                         </td>
                         <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                   {{--        {{ $jobSeeker->email }} --}}
+                          {{ $user->email }} 
                         </td>
                         <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                           <div class="text-sm leading-5 text-gray-900">
-                           {{--    {{ $jobSeeker->phone_number }} --}}
+                           {{--    {{ $user->supervisor }} --}}
                           </div>
                         </td>
+
+                        @if ($user->is_role === 'super_admin')
                         <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                          <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
-                            {{--   {{ $jobSeeker->is_approved ? 'Approved' : 'Not Approved' }} --}}
+                          <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-gray-100 text-gray-800">
+                           {{ $user->is_role }} 
                           </span>
                         </td>
+
+                        @elseif($user->is_role === 'case_manager')
+                        <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                          <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-gray-800">
+                           {{ $user->is_role }} 
+                          </span>
+                        </td>
+
+                        @elseif($user->is_role === 'employer')
+                        <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                          <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-purple-100 text-gray-800">
+                           {{ $user->is_role }} 
+                          </span>
+                        </td>
+
+                        @elseif($user->is_role === 'job_seeker')
+                        <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                          <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-gray-800">
+                           {{ $user->is_role }} 
+                          </span>
+                        </td>
+
+                        @endif
                         <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500">
-                        {{--   {{$jobSeeker->created_at}} --}}
+                          {{$user->created_at}} 
                         </td>
                         <td class="px-6 py-4 flex whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
                    
@@ -113,8 +138,8 @@
                  
                     </tbody>
                     <!-- BODY end -->
-           {{--          @endif
-                    @endforeach --}}
+           {{--          @endif--}}
+                    @endforeach 
                   </table>
                 </div>
               </div>

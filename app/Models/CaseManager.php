@@ -2,7 +2,9 @@
 
 namespace App\Models;
 
+use App\Models\User;
 use App\Models\Attachment;
+use App\Models\Application;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -32,5 +34,10 @@ class CaseManager extends Model
     public function attachments()
     {
         return $this->hasMany(Attachment::class);
+    }
+
+    public function application()
+    {
+        return $this->hasOne(Application::class);
     }
 }

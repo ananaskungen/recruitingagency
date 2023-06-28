@@ -54,6 +54,24 @@
                                     <option value="employer">Employer</option>
                                     <option value="super_admin">Super Admin</option>
                                   </select>
+
+                                  <label>Applications:</label>
+                                  <select required class="w-full bg-gray-200 border border-gray-200 text-black text-xs py-3 px-4 pr-8 mb-3 rounded" id="applications" name="applications">
+                                    <option></option>
+                                      @foreach ($jobSeekers as $jobSeeker)
+                                          <option value="{{ $jobSeeker->id }}">{{ $jobSeeker->id }} {{ $jobSeeker->email }} {{ $jobSeeker->first_name }} {{ $jobSeeker->last_name }}</option>
+                                      @endforeach
+                                      
+                                      @foreach ($caseManagers as $caseManager)
+                                      <option value="{{ $caseManager->id }}">{{ $caseManager->id }} {{ $caseManager->email }} {{ $caseManager->first_name }} {{ $caseManager->last_name }}</option>                                      
+                                      @endforeach
+                                     
+
+                                      @foreach ($employers as $employer)
+                                        <option value="{{ $employer->id }}">{{ $employer->id }} {{ $employer->email }} {{ $employer->first_name }} {{ $employer->last_name }}</option>                                      
+                                        @endforeach
+                                     
+                                  </select>
                            
                             </div>
 
