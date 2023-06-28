@@ -14,6 +14,7 @@ use App\Http\Controllers\CaseManagerController;
 use App\Http\Controllers\SaRolesCmController;
 use App\Http\Controllers\SaRolesEController;
 use App\Http\Controllers\SaRolesJsController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -234,10 +235,13 @@ Route::middleware(['auth','verified'])->group(function () {
     })->name('reports');
 
     /* All Users Section */    
-    Route::get('/dashboard/users', function () {
-        // Logic for agency registration
-        return view('super-admin-related/users');
-    })->name('users');
+    Route::get('/dashboard/users', [UserController::class, 'index']
+    )->name('users');
+
+    Route::get('/dashboard/users/create', [UserController::class, 'create']
+    )->name('users.create');
+    Route::post('/dashboard/users', [UserController::class, 'store'])->name('users.store');
+
     
     /* Settings Section */
     Route::get('/dashboard/settings', function () {

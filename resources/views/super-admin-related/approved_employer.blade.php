@@ -5,7 +5,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
           <div class="flex flex-col">
             <div class="mb-4">
-              <h1 class="text-3xl font-bolder leading-tight text-gray-900">Employers</h1>
+              <h1 class="text-3xl font-bolder leading-tight text-gray-900">Approved Employers</h1>
             </div>
             <div class="-mb-2 py-4 flex flex-wrap flex-grow justify-between">
               <div class="flex items-center py-2">
