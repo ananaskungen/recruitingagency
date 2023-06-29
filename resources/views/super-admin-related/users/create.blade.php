@@ -22,8 +22,8 @@
             <div class="p-6 flex flex-col ">
                 <div class="container">
 
-                    <form action=" {{ route('users.store', ['user' => $user]) }}  " method="POST" enctype="multipart/form-data">
-                       @csrf 
+                    <form action="{{ route('users.store') }}" method="POST" enctype="multipart/form-data">
+                        @csrf 
 
                         <div class="flex flex-col gap-5">
 
@@ -55,22 +55,28 @@
                                     <option value="super_admin">Super Admin</option>
                                   </select>
 
-                                  <label>Applications:</label>
-                                  <select required class="w-full bg-gray-200 border border-gray-200 text-black text-xs py-3 px-4 pr-8 mb-3 rounded" id="applications" name="applications">
-                                    <option></option>
+                                  <label>Job Seeker:</label>
+                                  <select class="w-full bg-gray-200 border border-gray-200 text-black text-xs py-3 px-4 pr-8 mb-3 rounded" name="job_seeker_id">
+                                      <option value="">Select a Job Seeker</option>
                                       @foreach ($jobSeekers as $jobSeeker)
                                           <option value="{{ $jobSeeker->id }}">{{ $jobSeeker->id }} {{ $jobSeeker->email }} {{ $jobSeeker->first_name }} {{ $jobSeeker->last_name }}</option>
                                       @endforeach
-                                      
+                                  </select>
+                                  
+                                  <label>Case Manager:</label>
+                                  <select class="w-full bg-gray-200 border border-gray-200 text-black text-xs py-3 px-4 pr-8 mb-3 rounded" name="case_manager_id">
+                                      <option value="">Select a Case Manager</option>
                                       @foreach ($caseManagers as $caseManager)
-                                      <option value="{{ $caseManager->id }}">{{ $caseManager->id }} {{ $caseManager->email }} {{ $caseManager->first_name }} {{ $caseManager->last_name }}</option>                                      
+                                          <option value="{{ $caseManager->id }}">{{ $caseManager->id }} {{ $caseManager->email }} {{ $caseManager->first_name }} {{ $caseManager->last_name }}</option>
                                       @endforeach
-                                     
-
+                                  </select>
+                                  
+                                  <label>Employer:</label>
+                                  <select class="w-full bg-gray-200 border border-gray-200 text-black text-xs py-3 px-4 pr-8 mb-3 rounded" name="employer_id">
+                                      <option value="">Select an Employer</option>
                                       @foreach ($employers as $employer)
-                                        <option value="{{ $employer->id }}">{{ $employer->id }} {{ $employer->email }} {{ $employer->first_name }} {{ $employer->last_name }}</option>                                      
-                                        @endforeach
-                                     
+                                          <option value="{{ $employer->id }}">{{ $employer->id }} {{ $employer->email }} {{ $employer->first_name }} {{ $employer->last_name }}</option>
+                                      @endforeach
                                   </select>
                            
                             </div>

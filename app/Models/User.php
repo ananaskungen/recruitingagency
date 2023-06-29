@@ -5,6 +5,7 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Models\Employer;
 use App\Models\JobSeeker;
+use App\Models\Application;
 use App\Models\CaseManager;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
@@ -46,7 +47,7 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function jobSeeker()
+   /*  public function jobSeeker()
     {
         return $this->hasOne(JobSeeker::class);
     }
@@ -59,5 +60,10 @@ class User extends Authenticatable
     public function employer()
     {
         return $this->hasOne(Employer::class);
+    } */
+
+    public function applications()
+    {
+        return $this->belongsToMany(Application::class);
     }
 }
